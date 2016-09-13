@@ -50,6 +50,7 @@
 		970CBE201D883A2D00C7C04C /* WatchesExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchesExampleUITests.swift; sourceTree = "<group>"; };
 		970CBE221D883A2D00C7C04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		970CBE2F1D883A4600C7C04C /* Watches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watches.swift; sourceTree = "<group>"; };
+		9763E4BF1D88768900E1AEEA /* WatchesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WatchesPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				970CBE2F1D883A4600C7C04C /* Watches.swift */,
+				9763E4BF1D88768900E1AEEA /* WatchesPlayground.playground */,
 			);
 			path = Watches;
 			sourceTree = "<group>";
