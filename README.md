@@ -25,6 +25,7 @@ Alamofire.request(loadProfileUrl).responseJSON { response in
 }
 ```
 Result: ```Elapsed interval for LoadProfile is 1.20113898515701```
+
 Determine the execution time of any block of code (closure).
 ```swift
 Watches.create("First 1 million times loop").tick {
