@@ -13,6 +13,14 @@ Then run `pod install` from Terminal
 Drag and drop `Watches.swift` source file into your project
 
 ## Usage
+By default, Watches will automatically print out the debugging log in format
+
+```"Elapsed interval for \(identifier) is \(interval)"```
+
+If you want to disable this auto log feature, set 
+
+```Watches.printElapsedTimeAutomatically = false```
+
 Track elapsed time of any async callback (e.g : network request)
 call tick to tickoff the time with specific identifier right before calling async task
 ```swift
@@ -20,8 +28,9 @@ Watches.tick("LoadProfile")
 ```
 Then call tock with the corresponding identifier inside async callback closure
 ```swift
-Watches.tock("LoadProfile") { debugPrint("Time needed for \($0) is \($1)") } 
+Watches.tock("LoadProfile")
 ```
+
 For example with Alamofire
 ```swift
 Watches.tick("LoadProfile")
@@ -29,7 +38,24 @@ Alamofire.request(loadProfileUrl).responseJSON { response in
     Watches.tock("LoadProfile")
 }
 ```
+
+It will print out the elapsed intervals in default format
+
 Result: ```Elapsed interval for LoadProfile is 1.20113898515701```
+
+Feel free to provide custom format that you desired
+
+```Watches.tock("LoadProfile") { debugPrint("Time needed for \($0) is \($1)") }```
+
+If you want the elapsed interval for your own purpose, get it from the tock return value
+
+```
+//You can disable auto print feature if you want
+Watches.printElapsedTimeAutomatically = false
+
+//Then get the result from tock function
+let elapsedTime = Watches.tock("LoadProfile")
+````
 
 Determine the execution time of any block of code.
 ```swift
