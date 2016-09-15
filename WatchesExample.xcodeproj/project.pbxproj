@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9708B1A51D8B61A500A0C285 /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708B1A31D8B61A500A0C285 /* Watches.swift */; };
+		9708B1A81D8B672E00A0C285 /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708B1A61D8B672E00A0C285 /* Watches.swift */; };
 		970CBE011D883A2D00C7C04C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970CBE001D883A2D00C7C04C /* AppDelegate.swift */; };
 		970CBE031D883A2D00C7C04C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970CBE021D883A2D00C7C04C /* ViewController.swift */; };
 		970CBE061D883A2D00C7C04C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970CBE041D883A2D00C7C04C /* Main.storyboard */; };
@@ -35,8 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9708B1A31D8B61A500A0C285 /* Watches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watches.swift; sourceTree = "<group>"; };
-		9708B1A41D8B61A500A0C285 /* WatchesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WatchesPlayground.playground; sourceTree = "<group>"; };
+		9708B1A61D8B672E00A0C285 /* Watches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Watches.swift; path = Watches/Watches.swift; sourceTree = SOURCE_ROOT; };
+		9708B1A71D8B672E00A0C285 /* WatchesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = WatchesPlayground.playground; path = Watches/WatchesPlayground.playground; sourceTree = SOURCE_ROOT; };
 		970CBDFD1D883A2D00C7C04C /* WatchesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970CBE001D883A2D00C7C04C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		970CBE021D883A2D00C7C04C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,8 +80,8 @@
 		9708B1A21D8B619900A0C285 /* Watches */ = {
 			isa = PBXGroup;
 			children = (
-				9708B1A31D8B61A500A0C285 /* Watches.swift */,
-				9708B1A41D8B61A500A0C285 /* WatchesPlayground.playground */,
+				9708B1A61D8B672E00A0C285 /* Watches.swift */,
+				9708B1A71D8B672E00A0C285 /* WatchesPlayground.playground */,
 			);
 			name = Watches;
 			sourceTree = "<group>";
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9708B1A51D8B61A500A0C285 /* Watches.swift in Sources */,
+				9708B1A81D8B672E00A0C285 /* Watches.swift in Sources */,
 				970CBE031D883A2D00C7C04C /* ViewController.swift in Sources */,
 				970CBE011D883A2D00C7C04C /* AppDelegate.swift in Sources */,
 			);
