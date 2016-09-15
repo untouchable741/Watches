@@ -34,10 +34,6 @@ public class Watches {
     init(identifier: String) {
         self.identifier = identifier
     }
-    
-    deinit {
-        debugPrint("Deinit watches \(identifier)")
-    }
 }
 
 // MARK: Instance's tracking
