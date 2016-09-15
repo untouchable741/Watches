@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9708B1A51D8B61A500A0C285 /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9708B1A31D8B61A500A0C285 /* Watches.swift */; };
 		970CBE011D883A2D00C7C04C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970CBE001D883A2D00C7C04C /* AppDelegate.swift */; };
 		970CBE031D883A2D00C7C04C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970CBE021D883A2D00C7C04C /* ViewController.swift */; };
 		970CBE061D883A2D00C7C04C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970CBE041D883A2D00C7C04C /* Main.storyboard */; };
@@ -14,8 +15,6 @@
 		970CBE0B1D883A2D00C7C04C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 970CBE091D883A2D00C7C04C /* LaunchScreen.storyboard */; };
 		970CBE161D883A2D00C7C04C /* WatchesExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970CBE151D883A2D00C7C04C /* WatchesExampleTests.swift */; };
 		970CBE211D883A2D00C7C04C /* WatchesExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970CBE201D883A2D00C7C04C /* WatchesExampleUITests.swift */; };
-		973AE5AD1D89869A00A0BE9B /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AE5AB1D89869A00A0BE9B /* Watches.swift */; };
-		973AE5AE1D89869A00A0BE9B /* Watches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973AE5AB1D89869A00A0BE9B /* Watches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9708B1A31D8B61A500A0C285 /* Watches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watches.swift; sourceTree = "<group>"; };
+		9708B1A41D8B61A500A0C285 /* WatchesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WatchesPlayground.playground; sourceTree = "<group>"; };
 		970CBDFD1D883A2D00C7C04C /* WatchesExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchesExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		970CBE001D883A2D00C7C04C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		970CBE021D883A2D00C7C04C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,8 +50,6 @@
 		970CBE1C1D883A2D00C7C04C /* WatchesExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WatchesExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		970CBE201D883A2D00C7C04C /* WatchesExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchesExampleUITests.swift; sourceTree = "<group>"; };
 		970CBE221D883A2D00C7C04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		973AE5AB1D89869A00A0BE9B /* Watches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Watches.swift; sourceTree = "<group>"; };
-		973AE5AC1D89869A00A0BE9B /* WatchesPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WatchesPlayground.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9708B1A21D8B619900A0C285 /* Watches */ = {
+			isa = PBXGroup;
+			children = (
+				9708B1A31D8B61A500A0C285 /* Watches.swift */,
+				9708B1A41D8B61A500A0C285 /* WatchesPlayground.playground */,
+			);
+			name = Watches;
+			sourceTree = "<group>";
+		};
 		970CBDF41D883A2D00C7C04C = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +109,7 @@
 		970CBDFF1D883A2D00C7C04C /* WatchesExample */ = {
 			isa = PBXGroup;
 			children = (
-				973AE5AA1D89869A00A0BE9B /* Watches */,
+				9708B1A21D8B619900A0C285 /* Watches */,
 				970CBE001D883A2D00C7C04C /* AppDelegate.swift */,
 				970CBE021D883A2D00C7C04C /* ViewController.swift */,
 				970CBE041D883A2D00C7C04C /* Main.storyboard */,
@@ -128,15 +136,6 @@
 				970CBE221D883A2D00C7C04C /* Info.plist */,
 			);
 			path = WatchesExampleUITests;
-			sourceTree = "<group>";
-		};
-		973AE5AA1D89869A00A0BE9B /* Watches */ = {
-			isa = PBXGroup;
-			children = (
-				973AE5AB1D89869A00A0BE9B /* Watches.swift */,
-				973AE5AC1D89869A00A0BE9B /* WatchesPlayground.playground */,
-			);
-			path = Watches;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				973AE5AD1D89869A00A0BE9B /* Watches.swift in Sources */,
+				9708B1A51D8B61A500A0C285 /* Watches.swift in Sources */,
 				970CBE031D883A2D00C7C04C /* ViewController.swift in Sources */,
 				970CBE011D883A2D00C7C04C /* AppDelegate.swift in Sources */,
 			);
@@ -281,7 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				970CBE161D883A2D00C7C04C /* WatchesExampleTests.swift in Sources */,
-				973AE5AE1D89869A00A0BE9B /* Watches.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

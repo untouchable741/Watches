@@ -18,8 +18,10 @@ public class Watches {
     /**
      Default callback in case no callback closure specified in tock function
      */
-    public static var defaultTockCallbackClosure : TockCallbackClosure = { identifier , interval in
-        debugPrint("Elapsed interval for \(identifier) is \(interval)")
+    public static var defaultTockCallbackClosure : TockCallbackClosure = { identifier , interval -> Void in
+        if printElapsedTimeAutomatically {
+            debugPrint("Elapsed interval for \(identifier) is \(interval)")
+        }
     }
     
     /**
@@ -34,10 +36,6 @@ public class Watches {
     init(identifier: String) {
         self.identifier = identifier
     }
-    
-    deinit {
-        debugPrint("Deinit watches \(identifier)")
-    }
 }
 
 // MARK: Instance's tracking
@@ -51,7 +49,7 @@ public class Watches {
 public extension Watches {
     
     /**
-        Create watches instance with idenfitifer
+        Create watches instance with specific idenfitifer
      */
     public static func create(identifier: String) -> Watches {
         let watchesInstance = Watches(identifier: identifier)
@@ -59,7 +57,7 @@ public extension Watches {
     }
     
     /**
-        Start tracking time and execute closure
+        Start tracking execution time for closure
      */
     public func tick(closure: Void -> Void) -> Watches {
         self.startTime = NSDate()
@@ -68,14 +66,19 @@ public extension Watches {
     }
     
     /**
-        Collect elapsed time
+        Start collecting elapsed interval for specific watches's identifier
      */
-    public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) {
+    public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) -> NSTimeInterval {
         guard let validTickTime = startTime else {
             callBack(identifier, 0)
-            return
+            return 0
         }
-        callBack(identifier, NSDate().timeIntervalSinceDate(validTickTime))
+        
+        let elapsedTime = NSDate().timeIntervalSinceDate(validTickTime)
+        
+        callBack(identifier, elapsedTime)
+        
+        return elapsedTime
     }
 }
 
@@ -93,23 +96,27 @@ public extension Watches {
 public extension Watches {
     
     /**
-        Start tracking timestamp with provided identifier
+        Start tracking timestamp for specific watches's identifier
      */
     public static func tick(identifier: String) {
         trackedTimeStamps[identifier] = NSDate()
     }
     
     /**
-        Collect elapse time for requested identifier
+        Collect elapsed interval for specific watches's identifier
     */
-    public static func tock(identifier: String, callback: TockCallbackClosure = defaultTockCallbackClosure) {
+    public static func tock(identifier: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> NSTimeInterval {
         guard let validTickTime = trackedTimeStamps[identifier] else {
             callback(identifier, 0)
-            return
+            return 0
         }
         
-        callback(identifier, NSDate().timeIntervalSinceDate(validTickTime))
+        let elapsedTime = NSDate().timeIntervalSinceDate(validTickTime)
         
         trackedTimeStamps[identifier] = nil
+        
+        callback(identifier, elapsedTime)
+        
+        return elapsedTime
     }
 }
