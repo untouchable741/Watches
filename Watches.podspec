@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Watches"
-  s.version      = "0.3"
+  s.version      = "0.3.1"
   s.summary      = "A Simple Stopwatches written in Swift help you easily measure the execution time of function, block of code or async callback."
   s.description  = <<-DESC
                    A Simple swift stopwatches helps you easily logging out the elapsed time between 2 timestamps , find out execution time of function, a block of code or async callback.
