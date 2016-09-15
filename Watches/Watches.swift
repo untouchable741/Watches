@@ -29,6 +29,8 @@ public class Watches {
      */
     static var trackedTimeStamps = [String : NSDate]()
     
+    public static var printElapsedTimeAutomatically = true
+    
     var identifier : String
     
     var startTime : NSDate?
