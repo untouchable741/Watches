@@ -18,14 +18,18 @@ public class Watches {
     /**
      Default callback in case no callback closure specified in tock function
      */
-    public static var defaultTockCallbackClosure : TockCallbackClosure = { identifier , interval in
-        debugPrint("Elapsed interval for \(identifier) is \(interval)")
+    public static var defaultTockCallbackClosure : TockCallbackClosure = { identifier , interval -> Void in
+        if printElapsedTimeAutomatically {
+            debugPrint("Elapsed interval for \(identifier) is \(interval)")
+        }
     }
     
     /**
      Dictionary that saved tracked time stamps based on id
      */
     static var trackedTimeStamps = [String : NSDate]()
+    
+    static var printElapsedTimeAutomatically = false
     
     var identifier : String
     
