@@ -43,7 +43,7 @@ It will print out the elapsed intervals in default format
 
 Result: ```Elapsed interval for LoadProfile is 1.20113898515701```
 
-Feel free to provide custom format that you desired
+Feel free to provide custom format that you desire
 
 ```Watches.tock("LoadProfile") { debugPrint("Time needed for \($0) is \($1)") }```
 
@@ -59,13 +59,13 @@ let elapsedTime = Watches.tock("LoadProfile")
 
 Determine the execution time of any block of code.
 ```swift
-Watches.create("First 1 million times loop").tick {
+Watches.create("1 million times loop").tick {
 	//Block of code to measure
     for _ in 0...10000000 { }
 
 }.tock()
 ```
-Result: ```Elapsed interval for First 1 million times loop is 0.214788019657135```
+Result: ```Elapsed interval for 1 million times loop is 0.214788019657135```
 
 If you want custom print format, just need to provide the tock callback closure.
 ```swift
@@ -76,6 +76,17 @@ Watches.create("2 million times loop").tick {
 }.tock { debugPrint("Time for finishing \($0) is \($1)")}
 ```
 Result: ```Time for finishing 2 million times loop is 0.411646008491516```
+
+If you just want to get the result
+```swift
+let executionTime = Watches.create("MyClosure").tick { 
+	//Block of code to measure
+	sleep(3)
+}.tock()
+
+debugPrint(executionTime)
+```
+Result: ```3.0011550188064575```
 
 ## License
 Watches is released under the MIT License. See LICENSE file for more detail. Copyright © Vuong Huu Tai
