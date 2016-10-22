@@ -18,9 +18,9 @@ public class Watches {
     /**
      Default callback in case no callback closure specified in tock function
      */
-    public static var defaultTockCallbackClosure : TockCallbackClosure = { identifier , interval -> Void in
+    public static var defaultTockCallbackClosure : TockCallbackClosure = { label , interval -> Void in
         if printElapsedTimeAutomatically {
-            debugPrint("Elapsed interval for \(identifier) is \(interval)")
+            debugPrint("Elapsed interval for \(label) is \(interval)")
         }
     }
     
@@ -31,12 +31,12 @@ public class Watches {
     
     public static var printElapsedTimeAutomatically = true
     
-    var identifier : String
+    var label : String
     
     var startTime : Date?
     
-    init(identifier: String) {
-        self.identifier = identifier
+    init(label: String) {
+        self.label = label
     }
 }
 
@@ -53,8 +53,8 @@ public extension Watches {
     /**
         Create watches instance with specific idenfitifer
      */
-    public static func create(identifier: String) -> Watches {
-        let watchesInstance = Watches(identifier: identifier)
+    public static func create(label: String) -> Watches {
+        let watchesInstance = Watches(label: label)
         return watchesInstance
     }
     
@@ -68,17 +68,17 @@ public extension Watches {
     }
     
     /**
-        Start collecting elapsed interval for specific watches's identifier
+        Start collecting elapsed interval for specific watches's label
      */
     public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
         guard let validTickTime = startTime else {
-            callBack(identifier, 0)
+            callBack(label, 0)
             return 0
         }
         
         let elapsedTime = Date().timeIntervalSince(validTickTime)
         
-        callBack(identifier, elapsedTime)
+        callBack(label, elapsedTime)
         
         return elapsedTime
     }
@@ -98,26 +98,26 @@ public extension Watches {
 public extension Watches {
     
     /**
-        Start tracking timestamp for specific watches's identifier
+        Start tracking timestamp for specific watches's label
      */
-    public static func tick(identifier: String) {
-        trackedTimeStamps[identifier] = Date()
+    public static func tick(label: String) {
+        trackedTimeStamps[label] = Date()
     }
     
     /**
-        Collect elapsed interval for specific watches's identifier
+        Collect elapsed interval for specific watches's label
     */
-    public static func tock(identifier: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
-        guard let validTickTime = trackedTimeStamps[identifier] else {
-            callback(identifier, 0)
+    public static func tock(label: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
+        guard let validTickTime = trackedTimeStamps[label] else {
+            callback(label, 0)
             return 0
         }
         
         let elapsedTime = Date().timeIntervalSince(validTickTime)
         
-        trackedTimeStamps[identifier] = nil
+        trackedTimeStamps[label] = nil
         
-        callback(identifier, elapsedTime)
+        callback(label, elapsedTime)
         
         return elapsedTime
     }
