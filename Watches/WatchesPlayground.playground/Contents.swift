@@ -2,14 +2,14 @@
 
 import Foundation
 
-Watches.tick("Playground")
+Watches.tick(identifier: "Playground")
 
 ///Chaining action tracking
 
 /**
     Track with default printing format
  */
-Watches.create("1 million times loop").tick {
+Watches.create(identifier: "1 million times loop").tick {
     for _ in 0...10000000 {
         
     }

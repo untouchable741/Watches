@@ -13,7 +13,7 @@ public class Watches {
     /**
      Callback closure type for tock function
      */
-    public typealias TockCallbackClosure = ((String, NSTimeInterval) -> Void)
+    public typealias TockCallbackClosure = ((String, TimeInterval) -> Void)
     
     /**
      Default callback in case no callback closure specified in tock function
@@ -27,13 +27,13 @@ public class Watches {
     /**
      Dictionary that saved tracked time stamps based on id
      */
-    static var trackedTimeStamps = [String : NSDate]()
+    static var trackedTimeStamps = [String : Date]()
     
     public static var printElapsedTimeAutomatically = true
     
     var identifier : String
     
-    var startTime : NSDate?
+    var startTime : Date?
     
     init(identifier: String) {
         self.identifier = identifier
@@ -61,8 +61,8 @@ public extension Watches {
     /**
         Start tracking execution time for closure
      */
-    public func tick(closure: Void -> Void) -> Watches {
-        self.startTime = NSDate()
+    public func tick(closure: (Void) -> Void) -> Watches {
+        self.startTime = Date()
         closure()
         return self
     }
@@ -70,13 +70,13 @@ public extension Watches {
     /**
         Start collecting elapsed interval for specific watches's identifier
      */
-    public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) -> NSTimeInterval {
+    public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
         guard let validTickTime = startTime else {
             callBack(identifier, 0)
             return 0
         }
         
-        let elapsedTime = NSDate().timeIntervalSinceDate(validTickTime)
+        let elapsedTime = Date().timeIntervalSince(validTickTime)
         
         callBack(identifier, elapsedTime)
         
@@ -101,19 +101,19 @@ public extension Watches {
         Start tracking timestamp for specific watches's identifier
      */
     public static func tick(identifier: String) {
-        trackedTimeStamps[identifier] = NSDate()
+        trackedTimeStamps[identifier] = Date()
     }
     
     /**
         Collect elapsed interval for specific watches's identifier
     */
-    public static func tock(identifier: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> NSTimeInterval {
+    public static func tock(identifier: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
         guard let validTickTime = trackedTimeStamps[identifier] else {
             callback(identifier, 0)
             return 0
         }
         
-        let elapsedTime = NSDate().timeIntervalSinceDate(validTickTime)
+        let elapsedTime = Date().timeIntervalSince(validTickTime)
         
         trackedTimeStamps[identifier] = nil
         
