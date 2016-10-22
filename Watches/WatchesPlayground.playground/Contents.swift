@@ -2,14 +2,14 @@
 
 import Foundation
 
-Watches.tick(identifier: "Playground")
+Watches.tick(label: "Playground")
 
 ///Chaining action tracking
 
 /**
     Track with default printing format
  */
-Watches.create(identifier: "1 million times loop").tick {
+Watches.create(label: "1 million times loop").tick {
     for _ in 0...10000000 {
         
     }
@@ -19,7 +19,7 @@ Watches.create(identifier: "1 million times loop").tick {
 /**
     Track with custom printing format
  */
-Watches.create("2 million times loop").tick {
+Watches.create(label: "2 million times loop").tick {
     for _ in 0...20000000 {
         
     }
@@ -30,11 +30,11 @@ Watches.create("2 million times loop").tick {
 
 let closure = {
     //Do something
-    Watches.tock("Closure")
+    Watches.tock(label: "Closure")
 }
 
 //Start tracking here
-Watches.tick("Closure")
+Watches.tick(label: "Closure")
 
 //Sleep for 2 second
 sleep(2)
@@ -42,16 +42,15 @@ sleep(2)
 //Execute closure
 closure()
 
-//Track elapsed interval
-Watches.tick("LoadProfile")
-
-doSomething()
-
-Watches.tock("LoadProfile") { debugPrint("Time needed for \($0) is \($1)") }
-
-
 func doSomething() {
     sleep(3)
 }
 
-Watches.tock("Playground") { debugPrint("Total time needed for this playground to finished is \($1)") }
+//Track elapsed interval
+Watches.tick(label: "LoadProfile")
+
+doSomething()
+
+Watches.tock(label:"LoadProfile") { debugPrint("Time needed for \($0) is \($1)") }
+
+Watches.tock(label:"Playground") { debugPrint("Total time needed for this playground to finished is \($1)") }
