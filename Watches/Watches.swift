@@ -61,7 +61,7 @@ public extension Watches {
     /**
         Start tracking execution time for closure
      */
-    public func tick(closure: (Void) -> Void) -> Watches {
+    @discardableResult public func tick(closure: (Void) -> Void) -> Watches {
         self.startTime = Date()
         closure()
         return self
@@ -70,7 +70,7 @@ public extension Watches {
     /**
         Start collecting elapsed interval for specific watches's identifier
      */
-    public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
+    @discardableResult public func tock(callBack: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
         guard let validTickTime = startTime else {
             callBack(label, 0)
             return 0
@@ -107,7 +107,7 @@ public extension Watches {
     /**
         Collect elapsed interval for specific watches's identifier
     */
-    public static func tock(label: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
+    @discardableResult public static func tock(label: String, callback: TockCallbackClosure = defaultTockCallbackClosure) -> TimeInterval {
         guard let validTickTime = trackedTimeStamps[label] else {
             callback(label, 0)
             return 0
