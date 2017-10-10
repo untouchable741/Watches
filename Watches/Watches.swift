@@ -8,7 +8,8 @@
 
 import Foundation
 
-public class Watches {
+@objc
+public class Watches: NSObject {
     
     /**
      Callback closure type for tock function
