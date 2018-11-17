@@ -61,7 +61,7 @@ public extension Watches {
     /**
         Start tracking execution time for closure
      */
-    @discardableResult public func tick(closure: (Void) -> Void) -> Watches {
+    @discardableResult public func tick(closure: () -> Void) -> Watches {
         self.startTime = Date()
         closure()
         return self

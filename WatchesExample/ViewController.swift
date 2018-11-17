@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         sleep(2)
         
         //Execute closure
-        closure()
+        _ = closure()
         
         func doSomething() {
             sleep(3)
